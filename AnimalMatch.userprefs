@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AnimalMatchApp.cs">
+    <Files>
+      <File FileName="Bootstrap.cs" Line="8" Column="51" />
+      <File FileName="AnimalMatchApp.cs" Line="98" Column="5" />
+      <File FileName="manifest.json" Line="3" Column="38" />
+      <File FileName="CubeWrapper.cs" Line="98" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

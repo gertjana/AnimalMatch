@@ -1,0 +1,10 @@
+bad
+bull
+chicken
+dog
+elephant
+good
+lion
+monkey
+penquin
+pig

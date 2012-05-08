@@ -1,0 +1,16 @@
+{"app": {
+    "title": "Animal Match",
+    "description": "Match up animals", 
+    "version": "1.0.0",
+    "runtime" : "executable",
+    "server" : "127.0.0.1:7000",
+    "appModule": "UNUSED",
+    "devAppID": 1100002,
+    "requiredSiftCount": 1,
+    "imagesPath": "assets/images",
+    "soundsPath": "assets/sounds",
+    "instructions": "assets/instructions",
+    "coverArt": "coverArt.png",
+    "internalArt": "internalArt.png"
+  }
+}
