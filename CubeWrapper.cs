@@ -4,11 +4,8 @@ using Sifteo;
 
 
 namespace net.addictivesoftware.sifteo.AnimalMatch {
-	// ## Wrapper ##
-  // "Wrapper" is not a specific API, but a pattern that is used in many Sifteo
-  // apps. A wrapper is an object that bundles a Cube object with game-specific
-  // data and behaviors.
-  public class CubeWrapper {
+
+	public class CubeWrapper {
 
     public AnimalMatchApp app;
     public Cube cube;
@@ -32,12 +29,9 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
     }
 
      private void OnButton(Cube cube, bool pressed) {
-		Log.Debug("Pressed a button");
 		if (pressed) {
-			Log.Debug("playing sound for " + app.imageNames[app.wrappers[cube.UniqueId].index]);
 			Sound sound = app.sounds[app.imageNames[app.wrappers[cube.UniqueId].index]];
-				Log.Debug("playing...");
-				sound.Play(1,0);	
+			sound.Play(1,0);	
 		}
     }
 
@@ -52,36 +46,11 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
 		}
     }
 
-    private void OnShakeStarted(Cube cube) {
-    }
-
-    private void OnShakeStopped(Cube cube, int duration) {
-    }
-
-    private void OnFlip(Cube cube, bool newOrientationIsUp) {
-    }
-
     public void DrawSlide() {
-
       String imageName = this.app.imageNames[this.index];
 
-      int screenX = 0;
-      int screenY = 0;
-
-      int imageX = 0;
-      int imageY = 0;
-
-      int width = 128;
-      int height = 128;
-
-      int scale = 1;
-
-      int rotation = 0;
-
       cube.FillScreen(Color.Black);
-			
-      cube.Image(imageName, screenX, screenY, imageX, imageY, width, height, scale, rotation);
-
+      cube.Image(imageName, 0, 0, 0, 0, 128, 128, 1, 0);
       cube.Paint();
     }
 		
@@ -101,7 +70,6 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
 	}
 		
 		
-    // This method is called every frame by the Tick in SlideShowApp (see above.)
     public void Tick() {
 
 		if (cube.IsShaking) {

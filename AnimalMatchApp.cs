@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,23 +15,13 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
 		
 	public int imageLength;
     public Dictionary<String, CubeWrapper> wrappers = new Dictionary<String, CubeWrapper>();
-    public Random random = new Random();
+    public Random random = new Random();		
 		
-	//public int mRandomOne = 0;
-	//public int mRandomTwo = 0;
-		
-		
-    // Here we initialize our app.
     public override void Setup() {
 
-      // Load up the list of images.
-      imageNames = LoadImageIndex();
+      imageNames = LoadImageAndSoundIndex();
 
-      // Loop through all the cubes and set them up.
       foreach (Cube cube in CubeSet) {
-				
-        // Create a wrapper object for each cube. The wrapper object allows us
-        // to bundle a cube with extra information and behavior.
         CubeWrapper wrapper = new CubeWrapper(this, cube);
 		wrapper.index = random.Next(imageLength);
         wrappers.Add(cube.UniqueId, wrapper);
@@ -104,18 +93,11 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
 		}
     }
 
-    // ImageSet is an enumeration of your app's images. It is populated based
-    // on your app's siftbundle and index. You rarely have to interact with it
-    // directly, since you can refer to images by name.
-    //
-    // In this method, we scan the image set to build an array with the names
-    // of all the images.
-    private String[] LoadImageIndex() {
+    private String[] LoadImageAndSoundIndex() {
       ImageSet imageSet = this.Images;
       ArrayList nameList = new ArrayList();
       foreach (ImageInfo image in imageSet) {
 		
-		Log.Debug(image.name);
 		if (image.name == "bad") {
 			badImage = image;			
 		} else if (image.name == "good") {
@@ -133,8 +115,6 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
       return rv;
     }
 
-  
-
 	public void ShowImage(Cube cube, String name) {
 		cube.FillScreen(Color.Black);		
 		cube.Image(name, 0, 0, 0, 0, 128, 128, 1, 0);
@@ -148,27 +128,3 @@ namespace net.addictivesoftware.sifteo.AnimalMatch {
 		ShowImage(cube, "good");
 	}
 }
-		
-	
-	
-  // ------------------------------------------------------------------------
-
-  
-}
-
-// -----------------------------------------------------------------------
-//
-// SlideShowApp.cs
-//
-// Copyright &copy; 2011 Sifteo Inc.
-//
-// This program is "Sample Code" as defined in the Sifteo
-// Software Development Kit License Agreement. By adapting
-// or linking to this program, you agree to the terms of the
-// License Agreement.
-//
-// If this program was distributed without the full License
-// Agreement, a copy can be obtained by contacting
-// support@sifteo.com.
-//
-
